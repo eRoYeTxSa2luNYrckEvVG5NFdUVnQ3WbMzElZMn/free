@@ -1,0 +1,27 @@
+#!/bin/bash
+# //====================================================
+# //  Elvaretta Store - Since 2023
+# //====================================================
+# //  System Request : Debian 9+/Ubuntu 18.04+/20+
+# //  Author         : budi_spielberg
+# //  Develop        : Elvaretta Store
+# //  email          : budi.tejosari@gmail.com
+# //  telegram       : t.me/budi_spielberg
+# //====================================================
+
+[Unit]
+Description=WebSocket
+Documentation=https://github.com/jaka1m
+After=syslog.target network-online.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/bin/ws -f /usr/bin/tun.conf
+Restart=on-failure
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target

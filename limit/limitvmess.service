@@ -1,0 +1,23 @@
+#!/bin/bash
+# //====================================================
+# //  Elvaretta Store - Since 2023
+# //====================================================
+# //  System Request : Debian 9+/Ubuntu 18.04+/20+
+# //  Author         : budi_spielberg
+# //  Develop        : Elvaretta Store
+# //  email          : budi.tejosari@gmail.com
+# //  telegram       : t.me/budi_spielberg
+# //====================================================
+
+[Unit]
+Description=Limit Usage Xray Service
+Documentation=t.me/budi_spielberg
+After=syslog.target network-online.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/etc/xray/limit.vmess
+
+[Install]
+WantedBy=multi-user.target

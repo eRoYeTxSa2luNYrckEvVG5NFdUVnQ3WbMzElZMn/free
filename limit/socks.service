@@ -1,0 +1,27 @@
+#!/bin/bash
+# //====================================================
+# //  Elvaretta Store - Since 2023
+# //====================================================
+# //  System Request : Debian 9+/Ubuntu 18.04+/20+
+# //  Author         : budi_spielberg
+# //  Develop        : Elvaretta Store
+# //  email          : budi.tejosari@gmail.com
+# //  telegram       : t.me/budi_spielberg
+# //====================================================
+
+[Unit]
+Description=Python Proxy Elvaretta Store
+Documentation=t.me/budi_spielberg
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/bin/ws.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
