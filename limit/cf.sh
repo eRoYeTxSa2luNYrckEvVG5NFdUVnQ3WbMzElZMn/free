@@ -14,7 +14,7 @@ MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 #read -p "Masukan Domain (contoh : budi)" domen
 DOMAIN=elvaretta.my.id
-sub=$(</dev/urandom tr -dc a-z0-9 | head -c2)
+sub=$(</dev/urandom tr -dc a-z0-9 | head -c6)
 dns=${sub}.elvaretta.my.id
 CF_ID=budi.tejosari@gmail.com
 CF_KEY=0448d0cfe34ae81cdc3eb68a0b9e6caa48047
